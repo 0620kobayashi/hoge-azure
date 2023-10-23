@@ -59,12 +59,20 @@ if uploaded_file != None:
         caption = object.object_property
 
         font = ImageFont.truetype(font = './PlaypenSans-VariableFont_wght.ttf', size=20)
-        text_w, text_h = draw.textsize(caption, font=font)
+        # text_w, text_h = draw.textsize(caption, font=font)
 
         draw.rectangle([(x, y), (x+w, y+h)], fill=None, outline='green', width=5)
-        draw.rectangle([(x, y), (x+text_w, y+text_h)], fill='Green', width=5)
+        # draw.rectangle([(x, y), (x+text_w, y+text_h)], fill='Green', width=5)
+        
+        tl = (x, y)
+        a, b, c, d= draw.textbbox(tl, caption, font=font)
+        draw.rectangle([(x, y), (c, d)], fill='Green', width=5)
         draw.text((x, y), caption, fill='white', font = font)
+        
     st.image(img)
+
+
+
 
     tags_name = get_tags(img_path)
     tags_name = ', '.join(tags_name)
