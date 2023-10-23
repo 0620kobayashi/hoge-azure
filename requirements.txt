@@ -1,0 +1,11 @@
+azure.cognitiveservices.vision.computervision
+OperationStatusCodes
+Details
+msrest.authentication 
+array
+os
+sys
+time
+json
+streamlit
+PIL
